@@ -1,4 +1,3 @@
-import React from "react";
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import styles from "./CreateVacancyForm.module.css";
@@ -72,7 +71,7 @@ export const CreateVacancyForm = () => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <CustomTitle title="Форма размещения заявки" underlineLastWord />
       <Formik
         initialValues={{
@@ -248,6 +247,6 @@ export const CreateVacancyForm = () => {
           </div>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };

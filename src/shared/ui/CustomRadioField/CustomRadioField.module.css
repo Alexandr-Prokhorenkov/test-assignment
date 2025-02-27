@@ -62,7 +62,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url("../../../assets/images/cheked_icon.svg") no-repeat center center;
+  background: url("../../../assets/images/icons/cheked_icon.svg") no-repeat center center;
   background-size: contain;
 }
 
