@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
 import { Header } from "./components/Header/Header";
 import { CreateVacancyForm } from "./components/CreateVacancyForm/CreateVacancyForm";
@@ -20,5 +20,4 @@ export const App = () => {
     </Router>
   );
 };
-
 
