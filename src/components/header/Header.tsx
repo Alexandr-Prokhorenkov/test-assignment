@@ -18,7 +18,7 @@ export const Header = () => {
                     : styles.menuLink
                 }
               >
-                Все заявки
+                <span className={styles.menuText}>Все заявки</span>
               </NavLink>
             </li>
             <li className={styles.menuItem}>
@@ -30,7 +30,7 @@ export const Header = () => {
                     : styles.menuLink
                 }
               >
-                Создание заявки
+                <span className={styles.menuText}>Создание заявки</span>
               </NavLink>
             </li>
           </ul>

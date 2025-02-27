@@ -48,19 +48,6 @@
   background-color: #88A4F5;
 }
 
-.menuLink::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  width: 78%;
-  height: 5px;
-  background-color: var(--underline-color);
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
 .menuItem:hover::after {
   opacity: 1;
 }
@@ -72,4 +59,28 @@
 .menuItem.active {
   background-color: #88A4F5;
 }
+
+.menuText {
+  position: relative;
+  font-size: 18px;
+  color: #FFFFFF;
+  transition: color 0.3s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 5px;
+    background-color: var(--underline-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.menuLink:hover .menuText::after {
+  opacity: 1;
+}
+
 
