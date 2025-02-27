@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
-import styles from "./CustomDateField.module.css";
+import styles from "./CustomDateField.module.scss";
 import CalendarIcon from "../../../assets/images/icons/calendar.svg";
 
 interface CustomDateFieldProps {

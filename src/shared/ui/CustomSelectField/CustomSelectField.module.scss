@@ -7,7 +7,7 @@
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 8px;
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .selectWrapper {
@@ -25,17 +25,17 @@
 }
 
 .select:focus {
-  border: 2px solid #4C73E3;
+  border: 2px solid var(--primary-color);
 }
 
 
 .select:hover {
-  box-shadow: 0 0 5px #35A500;
+  box-shadow: 0 0 5px var(--shadow-color);
   cursor: pointer;
 }
 
 .select.selected {
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .options {
@@ -48,7 +48,7 @@
   list-style: none;
   padding: 0;
   margin: 5px 0;
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .option {
@@ -85,12 +85,12 @@
 }
 
 .required {
-  color: #BF0003;
+  color: var(--error-color);
   font-weight: 600;
 }
 
 .error {
-  color: #BF0003;
+  color: var(--error-color);
   font-size: 14px;
   margin-top: 5px;
 }

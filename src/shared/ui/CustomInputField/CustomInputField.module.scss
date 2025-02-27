@@ -17,7 +17,7 @@
   border-radius: 16px;
   font-size: 16px;
   font-weight: 300;
-  color: #4F4F55; 
+  color: var(--text-color); 
 }
 
 .small {
@@ -33,28 +33,32 @@
 }
 
 .input:focus {
-  border: 2px solid #4C73E3;
+  border: 2px solid var(--primary-color);
 }
 
 .input:hover {
-  box-shadow: 0 0 5px #35A500;
+  box-shadow: 0 0 5px var(--shadow-color);
+}
+
+.errorInput {
+  border: 2px solid var(--error-color);
 }
 
 .label {
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 8px;
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .error {
-  color: #BF0003;
+  color: var(--error-color);
   font-size: 14px;
   margin-top: 5px;
 }
 
 .required {
-  color: #BF0003;
+  color: var(--error-color);
   font-weight: 600;
 }
 

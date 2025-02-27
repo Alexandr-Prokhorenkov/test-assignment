@@ -2,7 +2,6 @@ import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import styles from "./CreateVacancyForm.module.css";
 import { useNavigate } from "react-router-dom";
-import { VacancyFormValues } from "../vacancyRequests/VacancyRequests";
 import {
   CustomButton,
   CustomDateField,
@@ -12,6 +11,7 @@ import {
   CustomTextAreaField,
   CustomTitle,
 } from "../../shared/ui";
+import { VacancyFormValues } from "../../shared/types";
 
 const validationSchema = Yup.object().shape({
   position: Yup.string(),

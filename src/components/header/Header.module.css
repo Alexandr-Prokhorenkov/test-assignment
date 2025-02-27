@@ -1,5 +1,5 @@
 .header {
-  background-color: #4C73E3;
+  background-color: var(--primary-color);
 }
 
 .container {
@@ -50,10 +50,10 @@
   position: absolute;
   left: 50%;
   bottom: 20px;
-  width: 78%; /* Регулируем ширину, чтобы полоса была под текстом */
+  width: 78%;
   height: 5px;
-  background-color: #F2C94C;
-  transform: translateX(-50%); /* Центрируем */
+  background-color: var(--underline-color);
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }

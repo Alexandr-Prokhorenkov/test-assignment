@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styled from "./Title.module.css";
+import styled from "./Title.module.scss";
 
 interface CustomTitleProps {
   title: string;

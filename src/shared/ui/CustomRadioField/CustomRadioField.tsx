@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
-import styles from "./CustomRadioField.module.css";
+import styles from "./CustomRadioField.module.scss";
 
 interface CustomRadioFieldProps {
   label: string;

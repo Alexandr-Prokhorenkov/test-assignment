@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./CustomSelectField.module.css";
+import styles from "./CustomSelectField.module.scss";
 import { useField, useFormikContext } from "formik";
 
 interface CustomSelectFieldProps {

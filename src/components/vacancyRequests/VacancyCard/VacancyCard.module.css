@@ -8,7 +8,7 @@
 .date {
   font-size: 14px;
   font-weight: 400;
-  color: #4F4F55;
+  color: var(--text-color);
   opacity: 0.6;
   line-height: 16.8px;
 }
@@ -66,7 +66,7 @@
   font-size: 16px;
   font-weight: 400;
   padding-left: 25px;
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .salary {
@@ -76,7 +76,7 @@
 }
 
 .salaryDecoraton {
-  color: #4C73E3;
+  color: var(--primary-color);
   font-size: 20px;
   font-weight: 700;
 }
@@ -85,7 +85,7 @@
   font-family: 'PF Din Text Cond Pro', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .metroStation {
@@ -94,7 +94,7 @@
   font-size: 16px;
   font-weight: 400;
   padding-left: 25px;
-  color: #4F4F55;
+  color: var(--text-color);
 }
 
 .metroStation::before {
@@ -105,12 +105,12 @@
   transform: translateY(-50%);
   width: 19px;
   height: 19px;
-  background: url("../../../assets/images/metro.svg") no-repeat center;
+  background: url("../../../assets/images/icons/metro.svg") no-repeat center;
   background-size: contain;
 }
 
 .professionalExperienceDecoraton {
-  color: #4C73E3;
+  color: var(--primary-color);
   font-size: 16px;
   font-weight: 700;
 }
@@ -123,7 +123,7 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: url("../../../assets/images/location.svg") no-repeat center;
+  background: url("../../../assets/images/icons/location.svg") no-repeat center;
   background-size: contain;
 }
 

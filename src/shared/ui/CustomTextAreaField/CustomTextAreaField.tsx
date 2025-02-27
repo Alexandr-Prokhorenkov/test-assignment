@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, ErrorMessage, useFormikContext } from "formik";
-import styles from "./CustomTextAreaField.module.css";
+import styles from "./CustomTextAreaField.module.scss";
 
 interface CustomTextAreaFieldProps {
   label: string;

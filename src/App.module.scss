@@ -29,6 +29,11 @@ button {
   cursor: pointer;
 }
 
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
 input, textarea {
   border: none;
   outline: none;

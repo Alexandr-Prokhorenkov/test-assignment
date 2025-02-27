@@ -9,25 +9,25 @@
 }
 
 .filled {
-  background-color: #4C73E3;
-  border: 1px solid #4C73E3;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   color: #FFF;
 }
 
 .filled:hover {
-  background-color: #88A7FF;
-  border: 1px solid #88A7FF;
+  background-color: var(--primary-color-hover);
+  border: 1px solid var(--primary-color-hover);
 }
 
 .outlined {
   background-color: transparent;
   color: #466BF5;
-  border: 1px solid #4C73E3;
+  border: 1px solid var(--primary-color);
 }
 
 .outlined:hover {
-  border: 1px solid #88A7FF;
-  color: #88A7FF;;
+  border: 1px solid var(--primary-color-hover);
+  color: var(--primary-color-hover);
 }
 
 .button:disabled {
