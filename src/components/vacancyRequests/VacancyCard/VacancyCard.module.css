@@ -1,0 +1,129 @@
+.card {
+  padding: 16px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4F4F55;
+  opacity: 0.6;
+  line-height: 16.8px;
+}
+
+.cardHeader {
+  padding: 3.5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.editButtonIcon {
+  width: 19px;
+  aspect-ratio: 1;
+}
+
+.editButton img {
+  width: 20px;
+  height: 20px;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rightContent {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.position {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.address {
+  position: relative;
+  font-family: 'PF Din Text Cond Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 25px;
+  color: #4F4F55;
+}
+
+.salary {
+  font-family: 'PF Din Text Cond Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.salaryDecoraton {
+  color: #4C73E3;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.professionalExperience {
+  font-family: 'PF Din Text Cond Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4F4F55;
+}
+
+.metroStation {
+  position: relative;
+  font-family: 'PF Din Text Cond Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 25px;
+  color: #4F4F55;
+}
+
+.metroStation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19px;
+  height: 19px;
+  background: url("../../../assets/images/metro.svg") no-repeat center;
+  background-size: contain;
+}
+
+.professionalExperienceDecoraton {
+  color: #4C73E3;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.address::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("../../../assets/images/location.svg") no-repeat center;
+  background-size: contain;
+}
+
