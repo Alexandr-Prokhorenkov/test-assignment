@@ -5,12 +5,13 @@ import { formatDate } from "@shared/utils/formatDate";
 import { formatNumbers } from "@shared/utils/formatNumbers";
 import { useNavigate } from "react-router-dom";
 import { VacancyFormValues } from "@shared/types";
+import { ROUTES } from "@shared/routes";
 
 export const VacancyCard: React.FC<VacancyFormValues> = (vacancy) => {
   const navigate = useNavigate()
 
   const handleEditClick = () => {
-    navigate("/edit", { state: { vacancy } });
+    navigate(`${ROUTES.EDIT}/${vacancy.id}`);
   }
 
   return (

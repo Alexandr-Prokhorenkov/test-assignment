@@ -1,7 +1,7 @@
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import styles from "./EditVacancyForm.module.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import styles from "./EditVacancyForm.module.scss";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   CustomButton,
   CustomDateField,
@@ -12,8 +12,9 @@ import {
   CustomTitle,
 } from "@shared/ui";
 import { VacancyFormValues } from "@shared/types";
-import { VacancyService } from "@shared/api/vacancyService";
 import { ROUTES } from "@shared/routes";
+import apiService from "@shared/api/ApiService";
+import { useEffect, useState } from "react";
 
 const validationSchema = Yup.object().shape({
   position: Yup.string(),
@@ -41,37 +42,29 @@ const validationSchema = Yup.object().shape({
 
 export const EditVacancyForm = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const params = useParams();
+  const [vacancy, setVacancy] = useState<VacancyFormValues | null>(null);
 
-  const vacancy: VacancyFormValues = location.state?.vacancy || {
-    id: 0,
-    position: "",
-    vacancyName: "",
-    department: "",
-    openDate: "",
-    closeDate: "",
-    gender: "",
-    education: "",
-    salary: "",
-    region: "",
-    address: "",
-    metroStation: "",
-    professionalExperience: "",
-    workSchedule: "",
-    employmentType: "",
-    salaryFrom: 0,
-    salaryTo: 0,
-    responsibilities: "",
-    candidateRequirements: "",
-    advantages: "",
-  };
+  useEffect(() => {
+    (async () => {
+      const res = await apiService.vacancy.getVacancy(params.id ?? '');
+      setVacancy(res);
+    })()
+
+  }, [params.id]);
+
+  if (!vacancy) {
+    return (
+      <>Загрузка...</>
+    )
+  }
 
   const handleEditForm = async (
     values: VacancyFormValues,
     { resetForm }: FormikHelpers<VacancyFormValues>
   ) => {
     try {
-      await VacancyService.updateVacancy(values.id, values);
+      await apiService.vacancy.updateVacancy(values.id, values);
       console.log("Вакансия успешно обновлена");
       resetForm();
       navigate(ROUTES.REQUESTS);
@@ -236,7 +229,7 @@ export const EditVacancyForm = () => {
               text="Отменить"
               type="button"
               variant="outlined"
-              onClick={() => navigate("/requests")}
+              onClick={() => navigate(ROUTES.REQUESTS)}
             />
           </div>
         </Form>

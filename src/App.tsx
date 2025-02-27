@@ -1,8 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
 import { Header } from "./components/header/Header";
-import { CreateVacancyForm } from "./components/createVacancyForm/CreateVacancyForm";
-import { EditVacancyForm } from "./components/editVacancyForm/EditVacancyForm";
+import { CreateVacancyForm } from "./components/CreateVacancyForm/CreateVacancyForm";
+import { EditVacancyForm } from "./components/EditVacancyForm/EditVacancyForm";
 import { VacancyFormRequests } from "./components/vacancyRequests/VacancyRequests";
 import { ROUTES } from "./shared/routes";
 
@@ -13,10 +13,17 @@ export const App = () => {
       <div className={styles.app}>
         <Routes>
           <Route path={ROUTES.HOME} element={<CreateVacancyForm />} />
-          <Route path={ROUTES.EDIT} element={<EditVacancyForm />} />
+          <Route path={`${ROUTES.EDIT}/:id`} element={<EditVacancyForm />} />
           <Route path={ROUTES.REQUESTS} element={<VacancyFormRequests />} />
         </Routes>
       </div>
     </Router>
   );
 };
+
+// Избавиться от лишних пропсов в shared ui
+// Объеденить логику компонентов createVacancyForm и editVacancyForm в одну
+// Посмотреть по проекту где можно использовать миксины, добавить CSS переменные для шривфтов, и возможно еще чего то
+// /src/shared/ui директория 3 пункт
+// assests можно вывести в паблик что бы уменьшить размер импорта
+

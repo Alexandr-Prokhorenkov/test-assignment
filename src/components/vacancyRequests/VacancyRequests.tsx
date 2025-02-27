@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import styles from "./VacancyRequests.module.css";
+import styles from "./VacancyRequests.module.scss";
 import { VacancyCard } from "@components/vacancyRequests/VacancyCard/VacancyCard";
 import { CustomTitle } from "@shared/ui";
 import { VacancyFormValues } from "@shared/types";
-import { VacancyService } from "@shared/api/vacancyService";
+import apiService from "@shared/api/ApiService";
 
 export const VacancyFormRequests = () => {
   const [vacancies, setVacancies] = useState<VacancyFormValues[]>([]);
@@ -11,7 +11,7 @@ export const VacancyFormRequests = () => {
   useEffect(() => {
     const fetchVacancies = async () => {
       try {
-        const data = await VacancyService.getVacancies();
+        const data = await apiService.vacancy.getVacancies();
         setVacancies(data);
       } catch (error) {
         console.error("Ошибка загрузки вакансий:", error);

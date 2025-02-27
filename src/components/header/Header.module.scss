@@ -1,4 +1,7 @@
+@import "@shared/styles/mixins.scss";
+
 .header {
+  @include font-secondary;
   background-color: var(--primary-color);
 }
 

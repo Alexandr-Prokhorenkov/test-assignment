@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
+import { ROUTES } from "@shared/routes";
 
 export const Header = () => {
   return (
@@ -10,7 +11,7 @@ export const Header = () => {
           <ul className={styles.menu}>
             <li className={styles.menuItem}>
               <NavLink
-                to="/requests"
+                to={ROUTES.REQUESTS}
                 className={({ isActive }) =>
                   isActive
                     ? `${styles.menuLink} ${styles.active} ${styles.menuItemActive}`
@@ -22,7 +23,7 @@ export const Header = () => {
             </li>
             <li className={styles.menuItem}>
               <NavLink
-                to="/"
+                to={ROUTES.HOME}
                 className={({ isActive }) =>
                   isActive
                     ? `${styles.menuLink} ${styles.active} ${styles.menuItemActive}`

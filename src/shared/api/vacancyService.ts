@@ -1,16 +1,35 @@
-import { ApiService } from "./apiService";
-import { VacancyFormValues } from "../types";
+import { AxiosInstance } from "axios";
 
-const api = new ApiService("https://359ffeaa109225a3.mokky.dev");
+class VacancyService {
+  private api: AxiosInstance;
 
-export const VacancyService = {
-  getVacancies: (): Promise<VacancyFormValues[]> => api.get("/userDate"),
+  constructor(api: AxiosInstance) {
+    this.api = api;
+  }
 
-  createVacancy: (vacancy: VacancyFormValues): Promise<VacancyFormValues> =>
-    api.post("/userDate", vacancy),
+  async getVacancies() {
+    const res = await this.api.get("/userDate");
+    return res.data;
+  }
 
-  updateVacancy: (id: number, vacancy: VacancyFormValues): Promise<VacancyFormValues> =>
-    api.patch(`/userDate/${id}`, vacancy),
+  async getVacancy(id: string) {
+    const res = await this.api.get(`/userDate/${id}`);
+    return res.data;
+  }
 
-  deleteVacancy: (id: number): Promise<void> => api.delete(`/userDate/${id}`),
-};
+  async createVacancy(vacancy: unknown) {
+    const res = await this.api.post("/userDate", vacancy);
+    return res.data;
+  }
+
+  async updateVacancy(id: number, vacancy: unknown) {
+    const res = await this.api.patch(`/userDate/${id}`, vacancy);
+    return res.data;
+  }
+
+  async deleteVacancy(id: number) {
+    await this.api.delete(`/userDate/${id}`);
+  }
+}
+
+export default VacancyService;

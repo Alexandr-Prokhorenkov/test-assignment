@@ -1,6 +1,6 @@
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import styles from "./CreateVacancyForm.module.css";
+import styles from "./CreateVacancyForm.module.scss";
 import { useNavigate } from "react-router-dom";
 import {
   CustomButton,
@@ -12,8 +12,8 @@ import {
   CustomTitle,
 } from "@shared/ui";
 import { VacancyFormValues } from "@shared/types";
-import { VacancyService } from "@shared/api/vacancyService";
 import { ROUTES } from "@shared/routes";
+import apiService from "@shared/api/ApiService";
 
 const validationSchema = Yup.object().shape({
   position: Yup.string(),
@@ -47,7 +47,7 @@ export const CreateVacancyForm = () => {
     { resetForm }: FormikHelpers<VacancyFormValues>
   ) => {
     try {
-      await VacancyService.createVacancy(values);
+      await apiService.vacancy.createVacancy(values);
       console.log("Вакансия успешно создана");
       resetForm();
       navigate(ROUTES.REQUESTS);

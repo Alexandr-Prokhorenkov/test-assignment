@@ -10,10 +10,21 @@
   color: var(--text-color);
 }
 
+.focused {
+  border: 1px solid var(--primary-color);
+}
+
 .selectWrapper {
   position: relative;
   width: 275px;
   cursor: pointer;
+  outline: none;
+}
+
+.selectWrapper:focus-visible,
+.selectWrapper:focus {
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
 }
 
 .select {
@@ -26,6 +37,7 @@
 
 .errorSelect {
   border: 2px solid var(--error-color);
+  border-radius: 16px;
 }
 
 .select:focus {
