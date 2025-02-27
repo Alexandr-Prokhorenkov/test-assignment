@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./VacancyRequests.module.scss";
-import { VacancyCard } from "@components/vacancyRequests/VacancyCard/VacancyCard";
+import { VacancyCard } from "@components/VacancyRequests/VacancyCard/VacancyCard";
 import { CustomTitle } from "@shared/ui";
-import { VacancyFormValues } from "@shared/types";
+import { VacancyFormValues } from "@shared/types/client/types";
 import apiService from "@shared/api/ApiService";
 
 export const VacancyFormRequests = () => {

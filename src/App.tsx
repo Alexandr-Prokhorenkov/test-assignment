@@ -1,9 +1,9 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
-import { Header } from "./components/header/Header";
+import { Header } from "./components/Header/Header";
 import { CreateVacancyForm } from "./components/CreateVacancyForm/CreateVacancyForm";
 import { EditVacancyForm } from "./components/EditVacancyForm/EditVacancyForm";
-import { VacancyFormRequests } from "./components/vacancyRequests/VacancyRequests";
+import { VacancyFormRequests } from "./components/VacancyRequests/VacancyRequests";
 import { ROUTES } from "./shared/routes";
 
 export const App = () => {
@@ -21,7 +21,6 @@ export const App = () => {
   );
 };
 
-// Избавиться от лишних пропсов в shared ui
 // Объеденить логику компонентов createVacancyForm и editVacancyForm в одну
 // Посмотреть по проекту где можно использовать миксины, добавить CSS переменные для шривфтов, и возможно еще чего то
 // /src/shared/ui директория 3 пункт

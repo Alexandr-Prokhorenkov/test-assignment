@@ -8,7 +8,7 @@ interface CustomTitleProps {
 
 export const CustomTitle: FC<CustomTitleProps> = ({
   title,
-  underlineLastWord = false,
+  underlineLastWord,
 }) => {
   const words = title.split(" ");
   const lastWord = words.pop();

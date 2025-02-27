@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./CustomSelectField.module.scss";
 import { useField, useFormikContext } from "formik";
+import { OptionItem } from "@shared/types/client";
 
 interface CustomSelectFieldProps {
   label: string;
   name: string;
-  options: { value: string; label: string }[];
+  options: OptionItem[];
   required?: boolean;
 }
 

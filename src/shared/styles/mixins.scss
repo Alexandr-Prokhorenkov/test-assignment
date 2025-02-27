@@ -1,7 +1,7 @@
 @mixin font-main {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-main);
 }
 
 @mixin font-secondary {
-  font-family: "Open Sans Hebrew", sans-serif;
+  font-family: var(--font-secondary);
 }

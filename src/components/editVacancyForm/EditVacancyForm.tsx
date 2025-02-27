@@ -11,7 +11,7 @@ import {
   CustomTextAreaField,
   CustomTitle,
 } from "@shared/ui";
-import { VacancyFormValues } from "@shared/types";
+import { VacancyFormValues } from "@shared/types/client/types";
 import { ROUTES } from "@shared/routes";
 import apiService from "@shared/api/ApiService";
 import { useEffect, useState } from "react";
@@ -47,16 +47,13 @@ export const EditVacancyForm = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await apiService.vacancy.getVacancy(params.id ?? '');
+      const res = await apiService.vacancy.getVacancy(params.id ?? "");
       setVacancy(res);
-    })()
-
+    })();
   }, [params.id]);
 
   if (!vacancy) {
-    return (
-      <>Загрузка...</>
-    )
+    return <>Загрузка...</>;
   }
 
   const handleEditForm = async (

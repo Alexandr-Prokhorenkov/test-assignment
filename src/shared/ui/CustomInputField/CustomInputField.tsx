@@ -1,40 +1,36 @@
 import React from "react";
 import { Field, ErrorMessage, useField } from "formik";
 import styles from "./CustomInputField.module.scss";
+import { InputSize, LayoutType } from "@shared/types/client";
 
-interface CustomInputFieldProps {
+interface CustomInputFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   label: string;
-  layout?: "row" | "column";
-  name: string;
-  type?: string;
-  required?: boolean;
-  size?: "small" | "medium" | "large";
+  layout?: LayoutType;
+  size?: InputSize;
 }
 
 export const CustomInputField: React.FC<CustomInputFieldProps> = ({
   label,
   layout = "column",
-  name,
-  type = "text",
-  required = false,
   size = "medium",
+  ...props
 }) => {
-  const [field, meta] = useField(name);
+  const [field, meta] = useField(props.name);
   return (
     <div className={`${styles.inputGroup} ${styles[layout]}`}>
-      <label htmlFor={name} className={styles.label}>
-        {label} {required && <span className={styles.required}>*</span>}
+      <label htmlFor={props.name} className={styles.label}>
+        {label} {props.required && <span className={styles.required}>*</span>}
       </label>
       <Field
        {...field}
-        name={name}
-        type={type}
+        name={props.name}
+        type={props.type}
         className={`${styles.input} ${styles[size]} ${
           meta.touched && meta.error ? styles.errorInput : ""
         }`}
-        required={required}
+        required={props.required}
       />
-      <ErrorMessage name={name} component="div" className={styles.error} />
+      <ErrorMessage name={props.name!} component="div" className={styles.error} />
     </div>
   );
 };

@@ -2,27 +2,22 @@ import React from "react";
 import { Field, ErrorMessage, useFormikContext } from "formik";
 import styles from "./CustomTextAreaField.module.scss";
 
-interface CustomTextAreaFieldProps {
+interface CustomTextAreaFieldProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   name: string;
-  placeholder?: string;
-  required?: boolean;
-  readOnly?: boolean;
-  defaultValue?: string;
 }
 
 export const CustomTextAreaField: React.FC<CustomTextAreaFieldProps> = ({
   label,
   name,
-  placeholder = "",
-  required = false,
   readOnly = false,
-  defaultValue = '',
+  ...props
 }) => {
 
-  const { values, setFieldValue } = useFormikContext<{ [key: string]: string }>();
+  const { values, setFieldValue } = useFormikContext<{ [key: string]: string | undefined }>();
 
-  const currentValue = readOnly ? defaultValue : values[name];
+  const currentValue = String(readOnly ? props.defaultValue : values[name] ?? '');
 
   const formatTextAsList = (text: string) => {
     return text
@@ -33,7 +28,7 @@ export const CustomTextAreaField: React.FC<CustomTextAreaFieldProps> = ({
   return (
     <div className={styles.textareaGroup}>
       <label htmlFor={name} className={styles.label}>
-        {label} {required && <span className={styles.required}>*</span>}
+        {label} {props.required && <span className={styles.required}>*</span>}
       </label>
       {readOnly ? (
         <div className={styles.readOnlyPreview}>
@@ -44,11 +39,12 @@ export const CustomTextAreaField: React.FC<CustomTextAreaFieldProps> = ({
           as="textarea"
           name={name}
           className={styles.textarea}
-          placeholder={placeholder}
-          required={required}
+          placeholder={props.placeholder}
+          required={props.required}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             setFieldValue(name, e.target.value)
           }
+          {...props}
         />
       )}
 

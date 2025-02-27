@@ -5,5 +5,7 @@
   --shadow-color: #35A500;
   --text-color: #4F4F55;
   --underline-color: #F2C94C;
+  --font-main: 'Inter', sans-serif;
+  --font-secondary: "Open Sans Hebrew", sans-serif;
 }
 

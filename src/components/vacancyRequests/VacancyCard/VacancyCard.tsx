@@ -4,20 +4,22 @@ import editIcon from "@assets/images/icons/edit.svg";
 import { formatDate } from "@shared/utils/formatDate";
 import { formatNumbers } from "@shared/utils/formatNumbers";
 import { useNavigate } from "react-router-dom";
-import { VacancyFormValues } from "@shared/types";
+import { VacancyFormValues } from "@shared/types/client/types";
 import { ROUTES } from "@shared/routes";
 
 export const VacancyCard: React.FC<VacancyFormValues> = (vacancy) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleEditClick = () => {
     navigate(`${ROUTES.EDIT}/${vacancy.id}`);
-  }
+  };
 
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <p className={styles.date}>Дата публикации: {formatDate(vacancy.openDate)}</p>
+        <p className={styles.date}>
+          Дата публикации: {formatDate(vacancy.openDate)}
+        </p>
         <button className={styles.editButton} onClick={handleEditClick}>
           <img
             className={styles.editButtonIcon}
@@ -34,9 +36,10 @@ export const VacancyCard: React.FC<VacancyFormValues> = (vacancy) => {
         <div className={styles.rightContent}>
           <p className={styles.salary}>
             <span className={styles.salaryDecoraton}>
-              от {formatNumbers(vacancy.salaryFrom)} до {formatNumbers(vacancy.salaryTo)}
+              от {formatNumbers(vacancy.salaryFrom)} до{" "}
+              {formatNumbers(vacancy.salaryTo)}
             </span>{" "}
-            {vacancy.salary === 'net' ? "на руки" : "до вычета налогов"}
+            {vacancy.salary === "net" ? "на руки" : "до вычета налогов"}
           </p>
           <p className={styles.professionalExperience}>
             Требуемый опыт:{" "}

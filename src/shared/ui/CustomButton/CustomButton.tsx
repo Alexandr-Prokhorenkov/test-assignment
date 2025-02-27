@@ -1,28 +1,24 @@
 import React from "react";
 import styles from "./CustomButton.module.scss";
+import { ButtonType, ButtonVariant } from "@shared/types/client";
 
-interface CustomButtonProps {
-  disabled?: boolean;
+interface CustomButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   text: string;
-  variant?: "filled" | "outlined";
-  type?: "button" | "submit" | "reset";
-  onClick?: () => void;
+  variant?: ButtonVariant;
+  type?: ButtonType;
 }
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
-  disabled = false,
   text,
   variant = "filled",
   type = "button",
-  onClick,
+  ...props
 }) => {
-
   return (
     <button
       className={`${styles.button} ${styles[variant]}`}
       type={type}
-      onClick={onClick}
-      disabled={disabled}
+      {...props}
     >
       {text}
     </button>

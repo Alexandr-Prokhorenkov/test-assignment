@@ -1,12 +1,13 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 import styles from "./CustomRadioField.module.scss";
+import { LayoutType, OptionItem } from "@shared/types/client";
 
 interface CustomRadioFieldProps {
   label: string;
   name: string;
-  options: { value: string; label: string }[];
-  layout?: "row" | "column";
+  options: OptionItem[];
+  layout?: LayoutType;
   required?: boolean;
 }
 
@@ -15,7 +16,7 @@ export const CustomRadioField: React.FC<CustomRadioFieldProps> = ({
   name,
   options,
   layout = "row",
-  required = false,
+  required,
 }) => {
   return (
     <div className={`${styles.radioGroup} ${styles[layout]}`}>
