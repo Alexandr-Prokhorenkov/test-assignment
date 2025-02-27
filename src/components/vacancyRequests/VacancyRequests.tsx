@@ -3,6 +3,7 @@ import styles from "./VacancyRequests.module.css";
 import { VacancyCard } from "./VacancyCard/VacancyCard";
 import { CustomTitle } from "../../shared/ui";
 import { VacancyFormValues } from "../../shared/types";
+import { VacancyService } from "../../shared/api/vacancyService";
 
 export const VacancyFormRequests = () => {
   const [vacancies, setVacancies] = useState<VacancyFormValues[]>([]);
@@ -10,13 +11,7 @@ export const VacancyFormRequests = () => {
   useEffect(() => {
     const fetchVacancies = async () => {
       try {
-        const response = await fetch(
-          "https://359ffeaa109225a3.mokky.dev/userDate"
-        );
-        if (!response.ok) {
-          throw new Error(`Ошибка запроса: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await VacancyService.getVacancies();
         setVacancies(data);
       } catch (error) {
         console.error("Ошибка загрузки вакансий:", error);
@@ -25,6 +20,7 @@ export const VacancyFormRequests = () => {
 
     fetchVacancies();
   }, []);
+
 
   console.log(vacancies);
 

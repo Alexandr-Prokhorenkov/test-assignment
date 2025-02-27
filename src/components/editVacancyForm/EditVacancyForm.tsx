@@ -1,9 +1,7 @@
-import React from "react";
 import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import styles from "./EditVacancyForm.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { VacancyFormValues } from "../vacancyRequests/VacancyRequests";
 import {
   CustomButton,
   CustomDateField,
@@ -13,6 +11,9 @@ import {
   CustomTextAreaField,
   CustomTitle,
 } from "../../shared/ui";
+import { VacancyFormValues } from "../../shared/types";
+import { VacancyService } from "../../shared/api/vacancyService";
+import { ROUTES } from "../../shared/routes";
 
 const validationSchema = Yup.object().shape({
   position: Yup.string(),
@@ -70,26 +71,10 @@ export const EditVacancyForm = () => {
     { resetForm }: FormikHelpers<VacancyFormValues>
   ) => {
     try {
-      const response = await fetch(
-        `https://359ffeaa109225a3.mokky.dev/userDate/${values.id}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Ошибка при отправке данных");
-      }
-
-      const result = await response.json();
-      console.log("Данные успешно отправлены:", result);
-
+      await VacancyService.updateVacancy(values.id, values);
+      console.log("Вакансия успешно обновлена");
       resetForm();
-      navigate("/requests");
+      navigate(ROUTES.REQUESTS);
     } catch (error) {
       console.error("Ошибка:", error);
     }

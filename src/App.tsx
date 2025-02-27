@@ -4,6 +4,7 @@ import { Header } from "./components/header/Header";
 import { CreateVacancyForm } from "./components/createVacancyForm/CreateVacancyForm";
 import { EditVacancyForm } from "./components/editVacancyForm/EditVacancyForm";
 import { VacancyFormRequests } from "./components/vacancyRequests/VacancyRequests";
+import { ROUTES } from "./shared/routes";
 
 export const App = () => {
   return (
@@ -11,9 +12,9 @@ export const App = () => {
       <Header />
       <div className={styles.app}>
         <Routes>
-          <Route path="/" element={<CreateVacancyForm />} />
-          <Route path="/edit" element={<EditVacancyForm />} />
-          <Route path="/requests" element={<VacancyFormRequests />} />
+          <Route path={ROUTES.HOME} element={<CreateVacancyForm />} />
+          <Route path={ROUTES.EDIT} element={<EditVacancyForm />} />
+          <Route path={ROUTES.REQUESTS} element={<VacancyFormRequests />} />
         </Routes>
       </div>
     </Router>

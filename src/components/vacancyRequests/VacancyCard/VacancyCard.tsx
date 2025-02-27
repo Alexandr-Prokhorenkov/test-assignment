@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./VacancyCard.module.css";
 import editIcon from "../../../assets/images/icons/edit.svg";
-import { VacancyFormValues } from "../VacancyRequests";
 import { formatDate } from "../../../shared/utils/formatDate";
 import { formatNumbers } from "../../../shared/utils/formatNumbers";
 import { useNavigate } from "react-router-dom";
+import { VacancyFormValues } from "../../../shared/types";
 
 export const VacancyCard: React.FC<VacancyFormValues> = (vacancy) => {
   const navigate = useNavigate()
