@@ -1,6 +1,7 @@
 .radioGroup {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .radioGroup.row .options {
@@ -18,7 +19,6 @@
 .label {
   font-weight: 600;
   font-size: 14px;
-  margin-bottom: 16px;
   color: var(--text-color);
 }
 

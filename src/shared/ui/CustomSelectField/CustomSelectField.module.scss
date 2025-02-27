@@ -1,12 +1,12 @@
 .inputGroup {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .label {
   font-weight: 600;
   font-size: 14px;
-  margin-bottom: 8px;
   color: var(--text-color);
 }
 
@@ -30,7 +30,7 @@
 .select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #DEE4F0;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   color: #DCDCDC;
 }

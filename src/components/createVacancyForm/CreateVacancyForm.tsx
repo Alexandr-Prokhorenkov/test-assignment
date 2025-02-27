@@ -11,7 +11,7 @@ import {
   CustomTextAreaField,
   CustomTitle,
 } from "@shared/ui";
-import { VacancyFormValues } from "@shared/types/client/types";
+import { VacancyFormValues } from "@shared/types/api/types";
 import { ROUTES } from "@shared/routes";
 import apiService from "@shared/api/ApiService";
 

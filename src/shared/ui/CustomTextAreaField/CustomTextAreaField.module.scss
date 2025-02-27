@@ -1,7 +1,7 @@
 .textareaGroup {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .label {
@@ -14,7 +14,7 @@
   width: 100%;
   min-height: 100px;
   padding: 10px;
-  border: 1px solid #DEE4F0;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   font-size: 16px;
   color: var(--text-color);
@@ -47,7 +47,7 @@
 
 .readOnlyPreview {
   padding: 10px;
-  border: 1px solid #DEE4F0;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   background-color: #F9F9F9;
   font-size: 16px;

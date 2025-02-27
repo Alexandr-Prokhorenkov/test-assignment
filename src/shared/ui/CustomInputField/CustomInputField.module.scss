@@ -1,7 +1,16 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: white !important; 
+  color: var(--text-color) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 
@@ -13,7 +22,7 @@
 
 .input {
   padding: 10px;
-  border: 1px solid #DEE4F0;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   font-size: 16px;
   font-weight: 300;
@@ -47,7 +56,6 @@
 .label {
   font-weight: 600;
   font-size: 14px;
-  margin-bottom: 8px;
   color: var(--text-color);
 }
 
