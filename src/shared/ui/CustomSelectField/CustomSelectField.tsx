@@ -26,7 +26,7 @@ export const CustomSelectField: React.FC<CustomSelectFieldProps> = ({
       </label>
       <div className={styles.selectWrapper} onClick={() => setOpen(!open)}>
         <div
-          className={`${styles.select} ${field.value ? styles.selected : ""}`}
+          className={`${styles.select} ${field.value ? styles.selected : ""} ${meta.touched && meta.error ? styles.errorSelect : ""}`}
         >
           {field.value
             ? options.find((opt) => opt.value === field.value)?.label

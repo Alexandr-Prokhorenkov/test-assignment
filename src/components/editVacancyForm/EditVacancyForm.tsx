@@ -10,10 +10,10 @@ import {
   CustomSelectField,
   CustomTextAreaField,
   CustomTitle,
-} from "../../shared/ui";
-import { VacancyFormValues } from "../../shared/types";
-import { VacancyService } from "../../shared/api/vacancyService";
-import { ROUTES } from "../../shared/routes";
+} from "@shared/ui";
+import { VacancyFormValues } from "@shared/types";
+import { VacancyService } from "@shared/api/vacancyService";
+import { ROUTES } from "@shared/routes";
 
 const validationSchema = Yup.object().shape({
   position: Yup.string(),

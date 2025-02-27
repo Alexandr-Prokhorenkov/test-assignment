@@ -20,7 +20,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Алиасы */
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@shared/*": ["shared/*"],
+      "@assets/*": ["assets/*"],
+    }
   },
   "include": ["src"]
 }

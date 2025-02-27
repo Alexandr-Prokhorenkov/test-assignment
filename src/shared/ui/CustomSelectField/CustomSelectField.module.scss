@@ -24,6 +24,10 @@
   color: #DCDCDC;
 }
 
+.errorSelect {
+  border: 2px solid var(--error-color);
+}
+
 .select:focus {
   border: 2px solid var(--primary-color);
 }

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./VacancyRequests.module.css";
-import { VacancyCard } from "./VacancyCard/VacancyCard";
-import { CustomTitle } from "../../shared/ui";
-import { VacancyFormValues } from "../../shared/types";
-import { VacancyService } from "../../shared/api/vacancyService";
+import { VacancyCard } from "@components/vacancyRequests/VacancyCard/VacancyCard";
+import { CustomTitle } from "@shared/ui";
+import { VacancyFormValues } from "@shared/types";
+import { VacancyService } from "@shared/api/vacancyService";
 
 export const VacancyFormRequests = () => {
   const [vacancies, setVacancies] = useState<VacancyFormValues[]>([]);
@@ -20,9 +20,6 @@ export const VacancyFormRequests = () => {
 
     fetchVacancies();
   }, []);
-
-
-  console.log(vacancies);
 
   return (
     <div className={styles.container}>
