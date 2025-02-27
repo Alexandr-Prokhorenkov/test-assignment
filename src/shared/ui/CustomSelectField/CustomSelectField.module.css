@@ -1,0 +1,96 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #4F4F55;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 275px;
+  cursor: pointer;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #DEE4F0;
+  border-radius: 16px;
+  color: #DCDCDC;
+}
+
+.select:focus {
+  border: 2px solid #4C73E3;
+}
+
+
+.select:hover {
+  box-shadow: 0 0 5px #35A500;
+  cursor: pointer;
+}
+
+.select.selected {
+  color: #4F4F55;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-weight: 300;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+  color: #4F4F55;
+}
+
+.option {
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f0f0f0;
+}
+
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  background: url("../../../assets/images/icons/select_down.svg") no-repeat center;
+  background-size: contain;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.arrowOpen {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.select option:disabled {
+  color: #DCDCDC;
+  font-style: italic;
+}
+
+.required {
+  color: #BF0003;
+  font-weight: 600;
+}
+
+.error {
+  color: #BF0003;
+  font-size: 14px;
+  margin-top: 5px;
+}

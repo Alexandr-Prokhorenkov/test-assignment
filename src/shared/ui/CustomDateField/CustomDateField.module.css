@@ -1,0 +1,78 @@
+.dateInput {
+  width: 275px;
+  padding: 10px;
+  border: 1px solid #DEE4F0;
+  border-radius: 16px;
+  font-size: 16px;
+}
+
+.dateInput:focus {
+  border: 2px solid #4C73E3;
+}
+
+
+.dateInput:hover {
+  box-shadow: 0 0 5px #35A500;
+  cursor: pointer;
+}
+
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #4F4F55;
+}
+
+.datePickerWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.calendarImg {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: #DCDCDC;
+  font-size: 16px;
+}
+
+input[type="date"]::-moz-placeholder {
+  color: #DCDCDC;
+  font-size: 16px;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.required {
+  color: #BF0003;
+  font-weight: 600;
+}

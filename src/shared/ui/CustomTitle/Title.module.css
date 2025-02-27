@@ -1,0 +1,16 @@
+.container {
+  margin-top: 48px;
+  margin-bottom: 56px;
+}
+
+.title {
+  color: #4C73E3;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px; 
+}
