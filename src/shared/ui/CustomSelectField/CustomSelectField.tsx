@@ -77,7 +77,7 @@ export const CustomSelectField: React.FC<CustomSelectFieldProps> = ({
   };
 
   const handleOpen = () => {
-    setOpen(true);
+    setOpen((prevOpen) => !prevOpen);
     hasInteracted.current = true;
   };
 

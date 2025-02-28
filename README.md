@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# Тестовое задание на позицию Frontend-разработчик в Филиал ФКУ Налог-Сервис ФНС
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ [Задание](https://www.figma.com/design/WpLfM39Rw6rXVLSBBELqXc/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-Frontend-Developer-%D0%A4%D0%9A%D0%A3-%22%D0%9D%D0%B0%D0%BB%D0%BE%D0%B3-%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%22?node-id=38-458&t=pcoHdSu4r1aA3T91-0).
 
-Currently, two official plugins are available:
+## Описание проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Приложение для создания и редактирования заявки на размещение вакансии.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Стек технологий
 
-- Configure the top-level `parserOptions` property like this:
+- **Frontend:** React, TypeScript, 
+- **Работа с данными:** MOKKY.DEV (Работает только при выключенном VPN)
+- **Работа с формами:** Formik + Yup
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Структура проекта
+```
+├── public/                         # Статические файлы
+├── src/
+│   ├── assets/                     # Медиафайлы (иконки, изображения)
+│   │   ├── images/
+│   │   └── icons/
+│   ├── components/                 # UI-компоненты
+│   │   ├── CreateVacancyForm/
+│   │   ├── EditVacancyForm/
+│   │   ├── Header/
+│   │   └── VacancyRequests/
+│   ├── shared/                     # Общие утилиты и стили
+│   │   ├── api/                    # API-запросы
+│   │   ├── styles/                 # Глобальные стили
+│   │   ├── types/                  # Типы TypeScript
+│   │   ├── ui/                     # UI-компоненты
+│   │   └── utils/                  # Вспомогательные функции
+│   ├── routes.ts                   # Конфигурация маршрутов
+│   ├── App.module.scss             # Стили для App.tsx
+│   ├── App.tsx                     # Главный компонент приложения
+│   ├── index.css                   # Глобальные стили
+│   ├── main.tsx                    # Точка входа в приложение
+│   ├── vite-env.d.ts               # Декларации для Vite
+└── package.json                    # Метаданные проекта
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Установка
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+# Клонировать репозиторий
+git clone https://github.com/Alexandr-Prokhorenkov/test-assignment.git
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# Перейти в директорию проекта
+cd test-assignment.git
+
+# Установить зависимости
+npm install
+
+# Запустить приложение
+npm run dev
 ```
