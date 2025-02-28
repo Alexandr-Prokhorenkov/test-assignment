@@ -11,43 +11,58 @@ export const VacancyCard: React.FC<VacancyFormValues> = (vacancy) => {
   const navigate = useNavigate();
 
   const handleEditClick = () => {
-    navigate(`${ROUTES.EDIT}/${vacancy.id}`);
+    if (vacancy.id) {
+      navigate(`${ROUTES.EDIT}/${vacancy.id}`);
+    }
   };
+
+  if (!vacancy || !vacancy.vacancyName || !vacancy.openDate) {
+    return null;
+  }
 
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
         <p className={styles.date}>
-          Дата публикации: {formatDate(vacancy.openDate)}
+          Дата публикации: {vacancy.openDate ? formatDate(vacancy.openDate) : "—"}
         </p>
-        <button className={styles.editButton} onClick={handleEditClick}>
-          <img
-            className={styles.editButtonIcon}
-            src={editIcon}
-            alt="Редактировать"
-          />
-        </button>
+        {vacancy.id && (
+          <button className={styles.editButton} onClick={handleEditClick}>
+            <img
+              className={styles.editButtonIcon}
+              src={editIcon}
+              alt="Редактировать"
+            />
+          </button>
+        )}
       </div>
       <div className={styles.cardContent}>
         <div className={styles.leftContent}>
           <p className={styles.vacancyName}>{vacancy.vacancyName}</p>
-          <p className={styles.address}>{vacancy.address}</p>
+          <p className={styles.address}>{vacancy.address || "Адрес не указан"}</p>
         </div>
         <div className={styles.rightContent}>
-          <p className={styles.salary}>
-            <span className={styles.salaryDecoraton}>
-              от {formatNumbers(vacancy.salaryFrom)} до{" "}
-              {formatNumbers(vacancy.salaryTo)}
-            </span>{" "}
-            {vacancy.salary === "net" ? "на руки" : "до вычета налогов"}
-          </p>
+          {vacancy.salaryFrom !== undefined && vacancy.salaryTo !== undefined ? (
+            <p className={styles.salary}>
+              <span className={styles.salaryDecoraton}>
+                от {formatNumbers(vacancy.salaryFrom)} до {formatNumbers(vacancy.salaryTo)}
+              </span>{" "}
+              {vacancy.salary === "net" ? "на руки" : "до вычета налогов"}
+            </p>
+          ) : (
+            <p className={styles.salary}>Зарплата не указана</p>
+          )}
+
           <p className={styles.professionalExperience}>
             Требуемый опыт:{" "}
             <span className={styles.professionalExperienceDecoraton}>
-              {vacancy.professionalExperience}
+              {vacancy.professionalExperience || "Не указан"}
             </span>
           </p>
-          <p className={styles.metroStation}>{vacancy.metroStation}</p>
+          
+          {vacancy.metroStation && (
+            <p className={styles.metroStation}>{vacancy.metroStation}</p>
+          )}
         </div>
       </div>
     </div>

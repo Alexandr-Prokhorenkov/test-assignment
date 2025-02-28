@@ -85,7 +85,7 @@ export const CreateVacancyForm = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form className={styles.formWrapper}>
+        <Form className={styles.formWrapper} noValidate>
           <section className={styles.form}>
             <div className={styles.row}>
               <CustomInputField

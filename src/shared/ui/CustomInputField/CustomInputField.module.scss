@@ -10,7 +10,6 @@ input:-webkit-autofill:active {
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 
@@ -57,12 +56,13 @@ input:-webkit-autofill:active {
   font-weight: 600;
   font-size: 14px;
   color: var(--text-color);
+  margin-bottom: 8px;
 }
 
 .error {
   color: var(--error-color);
   font-size: 14px;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .required {
